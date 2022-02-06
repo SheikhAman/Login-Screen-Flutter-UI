@@ -110,6 +110,7 @@ class LoginPage extends StatelessWidget {
                   children: [
                     Image.asset(
                       'images/facebook.png',
+                      height: MediaQuery.of(context).size.height * .02,
                       width: MediaQuery.of(context).size.width * .04,
                     ),
                     SizedBox(
@@ -134,12 +135,13 @@ class LoginPage extends StatelessWidget {
                   children: [
                     Image.asset(
                       'images/google.png',
+                      height: MediaQuery.of(context).size.height * .02,
                       width: MediaQuery.of(context).size.width * .04,
                     ),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * .01,
+                      width: MediaQuery.of(context).size.width * .02,
                     ),
-                    Text('Facebook'),
+                    Text('Google'),
                   ],
                 ),
               ),
