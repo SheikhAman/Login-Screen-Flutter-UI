@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -12,7 +10,7 @@ class LoginPage extends StatelessWidget {
         children: [
           Image.asset(
             'images/undraw.jpg',
-            height: MediaQuery.of(context).size.height * .28,
+            height: MediaQuery.of(context).size.height * .31,
           ),
           Text(
             'Welcome back!',
@@ -32,7 +30,7 @@ class LoginPage extends StatelessWidget {
             child: TextField(
               decoration: InputDecoration(
                 prefixIcon: Padding(
-                  padding: const EdgeInsets.only(left: 18.0),
+                  padding: const EdgeInsets.only(left: 18.0, right: 18.0),
                   child: Icon(Icons.person_outline_outlined),
                 ),
                 hintText: 'Email',
@@ -47,7 +45,7 @@ class LoginPage extends StatelessWidget {
             child: TextField(
               decoration: InputDecoration(
                 prefixIcon: Padding(
-                  padding: const EdgeInsets.only(left: 18.0),
+                  padding: const EdgeInsets.only(left: 18.0, right: 18.0),
                   child: Icon(Icons.lock_open_outlined),
                 ),
                 hintText: 'Password',
@@ -68,17 +66,103 @@ class LoginPage extends StatelessWidget {
               ),
             ),
           ),
-          ElevatedButton(
-            child: Text(
-              'LOG IN',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
+          Padding(
+            padding: EdgeInsets.only(
+              top: MediaQuery.of(context).size.height * .02,
+              left: MediaQuery.of(context).size.width * .2,
+              right: MediaQuery.of(context).size.width * .2,
             ),
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(shape: StadiumBorder()),
+            child: ElevatedButton(
+              child: Padding(
+                padding:
+                    EdgeInsets.all(MediaQuery.of(context).size.width * .02),
+                child: Text(
+                  'LOG IN',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(shape: StadiumBorder()).copyWith(
+                  backgroundColor:
+                      MaterialStateProperty.all(Color(0xFF0148a4))),
+            ),
           ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * .02,
+          ),
+          Text(
+            'Or connect with',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 18, color: Colors.grey[500]),
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * .03,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: () {},
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'images/facebook.png',
+                      width: MediaQuery.of(context).size.width * .04,
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * .02,
+                    ),
+                    Text('Facebook'),
+                  ],
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: Color(0xFF365b90),
+                ),
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * .02,
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  primary: Color(0xFFF84133),
+                ),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'images/google.png',
+                      width: MediaQuery.of(context).size.width * .04,
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * .01,
+                    ),
+                    Text('Facebook'),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * .04,
+          ),
+          RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                text: "Don't have an account?",
+                style: TextStyle(color: Colors.black87),
+                children: [
+                  TextSpan(
+                    text: " Sign Up",
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ]),
+          )
         ],
       ),
     );
