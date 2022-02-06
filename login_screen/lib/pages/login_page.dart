@@ -25,12 +25,17 @@ class LoginPage extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 18, color: Colors.grey),
           ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.015,
+          ),
           Padding(
-            padding: const EdgeInsets.all(12.0),
+            padding: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width * 0.05),
             child: TextField(
               decoration: InputDecoration(
                 prefixIcon: Padding(
-                  padding: const EdgeInsets.only(left: 18.0, right: 18.0),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.width * 0.07),
                   child: Icon(Icons.person_outline_outlined),
                 ),
                 hintText: 'Email',
@@ -40,12 +45,18 @@ class LoginPage extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.015,
+          ),
           Padding(
-            padding: const EdgeInsets.all(12.0),
+            padding: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width * 0.05),
             child: TextField(
+              obscureText: true,
               decoration: InputDecoration(
                 prefixIcon: Padding(
-                  padding: const EdgeInsets.only(left: 18.0, right: 18.0),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.width * 0.07),
                   child: Icon(Icons.lock_open_outlined),
                 ),
                 hintText: 'Password',
@@ -54,6 +65,9 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
             ),
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.015,
           ),
           Padding(
             padding: const EdgeInsets.only(right: 11.0),
